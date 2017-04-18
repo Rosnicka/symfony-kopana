@@ -1,0 +1,105 @@
+{% extends 'administration.html.twig' %}
+
+{% block title %}
+    Detail zápasu {{ gameId }}
+{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Hřiště</div>
+                    <div class="panel-body">Mikulova</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Datum</div>
+                    <div class="panel-body">19.4.2017</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Čas</div>
+                    <div class="panel-body">18:15</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Liga</div>
+                    <div class="panel-body">7E</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Soupiska týmu: <strong>Dynamo R.U.M. B</strong></div>
+                    <table class="table table-bordered table-hover">
+                        <tr>
+                            <th>Dres č.</th>
+                            <th>ID hráče</th>
+                            <th>Příjmení a jméno</th>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>48792</td>
+                            <td>Křížek Tomáš</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>48792</td>
+                            <td>Kloubek Lukáš</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>487892</td>
+                            <td>Lysý Vojtěch</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>48792</td>
+                            <td>Křížek Tomáš</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>48792</td>
+                            <td>Křížek Tomáš</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>48792</td>
+                            <td>Křížek Tomáš</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Soupiska týmu: <strong>Rumburaci</strong></div>
+                    <div class="panel-body">What?</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Události zápasu</div>
+                    <table class="table table-bordered table-hover">
+                        <tr>
+                            <th class="col-sm-1">Čas</th>
+                            <th class="col-sm-2">Událost</th>
+                            <th class="col-sm-3">Hráč (tým)</th>
+                            <th class="col-sm-6">Popis události</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,17 +1,34 @@
 AppBundle\Entity\Team:
-    type: entity
-    table: null
-    repositoryClass: AppBundle\Repository\TeamRepository
+  type: entity
+  repositoryClass: AppBundle\Repository\TeamRepository
+  id:
     id:
-        id:
-            type: integer
-            id: true
-            generator:
-                strategy: AUTO
-    fields:
-        name:
-            type: string
-            length: 255
-        created:
-            type: datetime
-    lifecycleCallbacks: {  }
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    name:
+      type: string
+      length: 255
+      nullable: false
+    color_primary:
+      type: string
+      length: 50
+      nullable: false
+    color_second:
+      type: string
+      length: 50
+      nullable: true
+  oneToMany:
+    user:
+      targetEntity: AppBundle\Entity\User
+      mappedBy: team
+    player:
+      targetEntity: AppBundle\Entity\Player
+      mappedBy: team
+    game:
+      targetEntity: AppBundle\Entity\Game
+      mappedBy: homeTeam
+    hostGame:
+      targetEntity: AppBundle\Entity\Game
+      mappedBy: hostTeam
