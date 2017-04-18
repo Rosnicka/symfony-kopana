@@ -1,0 +1,23 @@
+AppBundle\Entity\GameField:
+  type: entity
+  repositoryClass: AppBundle\Repository\GameFieldRepository
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    name:
+      type: string
+      length: 255
+      nullable: false
+    address:
+      type: text
+      nullable: false
+    description:
+      type: text
+      nullable: true
+  oneToMany:
+    game:
+      targetEntity: AppBundle\Entity\Game
+      mappedBy: gameField

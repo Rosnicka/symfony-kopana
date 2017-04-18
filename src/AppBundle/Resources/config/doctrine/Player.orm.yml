@@ -1,0 +1,38 @@
+AppBundle\Entity\Player:
+  type: entity
+  repositoryClass: AppBundle\Repository\PlayerRepository
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    firstname:
+      type: string
+      length: 50
+      nullable: false
+    lastname:
+      type: string
+      length: 50
+      nullable: false
+    personal_identification_number:
+      type: integer
+      length: 10
+      nullable: false
+    birth_date:
+      type: date
+      nullable: true
+    number:
+      type: integer
+      length: 3
+      nullable: true
+    season_active:
+      type: boolean
+      nullable: true
+  manyToOne:
+    team:
+      targetEntity: AppBundle\Entity\Team
+      inversedBy: player
+      joinColumns:
+        team_id:
+          referencedColumnName: id

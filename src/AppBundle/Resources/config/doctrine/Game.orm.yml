@@ -1,0 +1,48 @@
+AppBundle\Entity\Game:
+  type: entity
+  repositoryClass: AppBundle\Repository\GameRepository
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    start:
+      type: date
+      nullable: false
+  manyToOne:
+    gameField:
+      targetEntity: AppBundle\Entity\GameField
+      inversedBy: game
+      joinColumns:
+        game_field_id:
+          referencedColumnName: id
+          nullable: false
+    homeTeam:
+      targetEntity: AppBundle\Entity\Team
+      inversedBy: game
+      joinColumns:
+        team_id:
+          referencedColumnName: id
+          nullable: false
+    hostTeam:
+      targetEntity: AppBundle\Entity\Team
+      inversedBy: hostGame
+      joinColumns:
+        team_id2:
+          referencedColumnName: id
+          nullable: false
+  manyToMany:
+    gameEvent:
+      targetEntity: AppBundle\Entity\GameEvent
+      inversedBy: game
+      joinTable:
+        name: GameEventToGame
+        joinColumns:
+          game_id:
+            referencedColumnName: id
+            nullable: false
+        inverseJoinColumns:
+          game_event_id:
+            referencedColumnName: id
+            nullable: false

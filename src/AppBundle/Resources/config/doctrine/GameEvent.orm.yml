@@ -1,0 +1,24 @@
+AppBundle\Entity\GameEvent:
+  type: entity
+  repositoryClass: AppBundle\Repository\GameEventRepository
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    time:
+      type: time
+      nullable: true
+  manyToOne:
+    gameEventType:
+      targetEntity: AppBundle\Entity\GameEventType
+      inversedBy: gameEvent
+      joinColumns:
+        game_event_type_id:
+          referencedColumnName: id
+          nullable: false
+  manyToMany:
+    game:
+      targetEntity: AppBundle\Entity\Game
+      mappedBy: gameEvent

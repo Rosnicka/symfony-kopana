@@ -1,0 +1,43 @@
+AppBundle\Entity\User:
+  type: entity
+  repositoryClass: AppBundle\Repository\UserRepository
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    email:
+      type: string
+      unique: true
+      length: 255
+      nullable: false
+    password:
+      type: string
+      length: 255
+      nullable: false
+    firstname:
+      type: string
+      length: 50
+      nullable: false
+    lastname:
+      type: string
+      length: 50
+      nullable: false
+    phone:
+      type: string
+      length: 255
+      nullable: true
+    address:
+      type: text
+      nullable: true
+    active:
+      type: boolean
+      nullable: true
+  manyToOne:
+    team:
+      targetEntity: AppBundle\Entity\Team
+      inversedBy: user
+      joinColumns:
+        team_id:
+          referencedColumnName: id

@@ -1,0 +1,17 @@
+AppBundle\Entity\GameEventType:
+  type: entity
+  repositoryClass: AppBundle\Repository\GameEventTypeRepository
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    name:
+      type: string
+      length: 50
+      nullable: false
+  oneToMany:
+    gameEvent:
+      targetEntity: AppBundle\Entity\GameEvent
+      mappedBy: gameEventType
