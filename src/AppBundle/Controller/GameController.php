@@ -23,7 +23,7 @@ class GameController extends Controller
     /** @Route("/administrace/zapas/{gameId}", requirements={"gameId": "\d+"}) */
     public function detailAction($gameId)
     {
-        $game = $this->getDoctrine()->getRepository('AppBundle:Product')->find($gameId);
+        $game = $this->getDoctrine()->getRepository('AppBundle:Game')->find($gameId);
 
         if (!$game) {
             throw $this->createNotFoundException(

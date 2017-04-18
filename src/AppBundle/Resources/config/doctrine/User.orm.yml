@@ -7,15 +7,6 @@ AppBundle\Entity\User:
       generator:
         strategy: AUTO
   fields:
-    email:
-      type: string
-      unique: true
-      length: 255
-      nullable: false
-    password:
-      type: string
-      length: 255
-      nullable: false
     firstname:
       type: string
       length: 50

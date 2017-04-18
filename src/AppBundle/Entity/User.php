@@ -5,22 +5,22 @@ namespace AppBundle\Entity;
 /**
  * User
  */
-class User
+class User extends \FOS\UserBundle\Model\User
 {
     /**
      * @var integer
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      */
-    private $email;
+    protected $email;
 
     /**
      * @var string
      */
-    private $password;
+    protected $password;
 
     /**
      * @var string

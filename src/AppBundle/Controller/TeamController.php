@@ -30,14 +30,15 @@ class TeamController extends Controller
         ]);
     }
 
-    /** @Route("/team/create") */
+    /** @Route("/registrace-tymu") */
     public function createAction(Request $request)
     {
         $team = new Team();
 
+        $user = $this->getUser()->getId();
+
         $form = $this->createFormBuilder($team)
-            ->add('name', TextType::class)
-            ->add('created', DateType::class)
+            ->add('name', TextType::class, array('label' => 'Název týmu'))
             ->add('save', SubmitType::class, array('label' => 'Vytvořit nový tým'))
             ->getForm();
 
